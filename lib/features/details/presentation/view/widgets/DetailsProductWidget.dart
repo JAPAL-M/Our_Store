@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:our_store/constant.dart';
 import '../../../../../core/utils/Styles.dart';
 import 'CustomFloatingButton.dart';
 import 'CustomMaterialButton.dart';
@@ -53,7 +54,7 @@ class DetailsProductWidget extends StatelessWidget {
             ],
           ),
           SizedBox(height: MediaQuery.of(context).size.height / 40,),
-          const CustomMaterialButton()
+          CustomMaterialButton(textButton: 'Add item to bag',color: kSecondaryColor,styleText: Styles.textstyle24w400, radius: 8, onPressed: () {  },)
         ],
       ),
     );

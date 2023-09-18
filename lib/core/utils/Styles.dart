@@ -18,8 +18,9 @@ abstract class Styles {
   static var textstyle10 = GoogleFonts.poppins().copyWith(fontSize: 10, fontWeight: FontWeight.w400, color: Colors.grey);
   static var textstyle10black = TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w300);
   static var textstyle24 = TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: kSecondaryColor);
-  static var textstyle24w400 = TextStyle(fontSize: 24, fontWeight: FontWeight.w400);
-  static var textstyle19 = TextStyle(fontSize: 19, fontWeight: FontWeight.w500);
+  static const textstyle24w400 = TextStyle(fontSize: 24, fontWeight: FontWeight.w400);
+  static const textstyle19 = TextStyle(fontSize: 19, fontWeight: FontWeight.w500);
+  static const textstyle50 = TextStyle(fontSize: 50,color: Colors.white);
 
 
 }
