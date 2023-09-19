@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:our_store/core/utils/AssetsData.dart';
+import '../../../../home/data/models/HomeModel.dart';
+import '../../../../home/presentation/view/widgets/AddToCartWidgets.dart';
 import 'DetailsProductWidget.dart';
 
 class DetailsViewBody extends StatelessWidget {
-  const DetailsViewBody({super.key});
-
+  const DetailsViewBody({super.key,required this.products});
+  final Products products;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.asset(
-          AssetsData.iphone,
-          fit: BoxFit.cover,
-          height: MediaQuery.of(context).size.height / 2.5,
+        Image.network(
+          products.image.toString(),
+          height: MediaQuery.of(context).size.height / 3,
           width: double.infinity,
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 30,
-        ),
-       const DetailsProductWidget()
+        ), 
+        DetailsProductWidget(products: products,),
+        const Spacer(),
+        AddToCartWidgets(products: products)
       ],
     );
   }
 }
+
+

@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:our_store/features/details/presentation/view/details_view.dart';
+import 'package:our_store/features/home/data/models/HomeModel.dart';
 
 import '../../../../../core/utils/AssetsData.dart';
 import '../../../../../core/utils/Styles.dart';
@@ -8,14 +10,14 @@ import 'CustomFloatingButton.dart';
 
 class HotSalesInfoItem extends StatelessWidget {
   const HotSalesInfoItem({
-    super.key,
+    super.key, required this.products,
   });
-
+final Products products;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Get.to(const DetailsView(),transition: Transition.cupertino);
+        Get.to(DetailsView(products: products,),transition: Transition.cupertino);
       },
       child: SizedBox(
         width: MediaQuery.of(context).size.width / 2.5,
@@ -27,17 +29,19 @@ class HotSalesInfoItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(AssetsData.iphone),
+                Center(child: Image.network(products.image.toString(),height: MediaQuery.of(context).size.height / 6,)),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 100,
                 ),
                 Text(
-                  'iPhone 12 Pro Max',
+                  products.name.toString(),
                   style: Styles.textstyle12,
+                  maxLines: 1,
                 ),
                 Text(
-                  '512GB Unlocked',
+                  'Subtitle',
                   style: Styles.textstyle10,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 60,
@@ -46,7 +50,7 @@ class HotSalesInfoItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$2,867',
+                      '${products.price} EGP',
                       style: Styles.textstyle12,
                     ),
                     const CustomFloatingButton()

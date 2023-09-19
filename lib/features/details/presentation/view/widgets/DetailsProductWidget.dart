@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_store/constant.dart';
+import 'package:our_store/features/home/data/models/HomeModel.dart';
 import '../../../../../core/utils/Styles.dart';
 import 'CustomFloatingButton.dart';
 import 'CustomMaterialButton.dart';
@@ -8,7 +9,10 @@ import 'CustomRaitingProduct.dart';
 class DetailsProductWidget extends StatelessWidget {
   const DetailsProductWidget({
     super.key,
+    required this.products,
   });
+
+  final Products products;
 
   @override
   Widget build(BuildContext context) {
@@ -18,43 +22,22 @@ class DetailsProductWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-              'AirPods Max',
-              style: Styles.textstyle24
+            products.name.toString(),
+            style: Styles.textstyle20.copyWith(color: kSecondaryColor),
+            maxLines: 1,
           ),
           const CustomRaitingProduct(),
           SizedBox(
             height: MediaQuery.of(context).size.height / 50,
           ),
-          Text(
-            'Apple-designed dynamic driver provides high-fidelity audio.Note : If the size of the earbud tips does not match the size of your ear canals or the headset is not worn properly in your ears, you may not obtain the correct sound qualities or call performance. Change the earbud tips to ones that fit more snugly in your ear',
-            style: Styles.textstyle14w300,
-          ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 50,
+            height: MediaQuery.of(context).size.height / 4,
+            child: Text(
+              products.description.toString(),
+              style: Styles.textstyle11.copyWith(fontWeight: FontWeight.w300,color: Colors.black),
+              overflow: TextOverflow.fade,
+            ),
           ),
-          Row(
-            children: [
-              Text(
-                '\$549',
-                style: Styles.textstyle24,
-              ),
-              const Spacer(),
-              CustomFloatingButtons(onPressed: () {  }, icon: Icons.remove,),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(
-                '1',
-                style: Styles.textstyle19,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              CustomFloatingButtons(onPressed: () {  }, icon: Icons.add,)
-            ],
-          ),
-          SizedBox(height: MediaQuery.of(context).size.height / 40,),
-          CustomMaterialButton(textButton: 'Add item to bag',color: kSecondaryColor,styleText: Styles.textstyle24w400, radius: 8, onPressed: () {  },)
         ],
       ),
     );

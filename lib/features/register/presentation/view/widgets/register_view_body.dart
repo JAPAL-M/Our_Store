@@ -9,7 +9,7 @@ class RegisterViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: kPrimaryColor,
-      child: RegisterDetailsView(),
+      child: const RegisterDetailsView(),
     );
   }
 }

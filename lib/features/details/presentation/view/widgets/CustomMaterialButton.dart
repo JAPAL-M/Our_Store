@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../constant.dart';
 import '../../../../../core/utils/Styles.dart';
@@ -16,7 +17,7 @@ final Function() onPressed;
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.width / 7,
+      height: 50.h,
       child: MaterialButton(
         onPressed: onPressed,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),

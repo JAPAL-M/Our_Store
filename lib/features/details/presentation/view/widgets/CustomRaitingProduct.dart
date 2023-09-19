@@ -34,7 +34,7 @@ class CustomRaitingProduct extends StatelessWidget {
         ),
         Text(
           '| 123 reviews',
-          style: Styles.textstyle10black,
+          style: Styles.textstyle10.copyWith(color: Colors.black,fontWeight: FontWeight.w300),
         )
       ],
     );
