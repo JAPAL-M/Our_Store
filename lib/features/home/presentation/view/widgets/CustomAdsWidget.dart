@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
@@ -15,8 +16,8 @@ class CustomAdsWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 31.0,bottom: 21),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8),
-        child: CarouselSlider(items: homeModel.data!.banners!.map((e) =>
-            Image(image: NetworkImage(e.image.toString()),width: double.infinity,fit: BoxFit.fill,)).toList(),
+        child: CarouselSlider(items: homeModel.data!.banners!.map((e) => 
+             Image(image: CachedNetworkImageProvider(e.image.toString()),width: double.infinity,fit: BoxFit.fill,)).toList(),
             options: CarouselOptions(
                 viewportFraction: 1,
                 autoPlay: true,

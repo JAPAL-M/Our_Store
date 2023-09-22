@@ -9,10 +9,11 @@ class CustomFloatingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width / 20,
-        height: MediaQuery.of(context).size.width / 20,
+        width: MediaQuery.of(context).size.width / 21,
+        height: MediaQuery.of(context).size.width / 21,
         child: FloatingActionButton(
           onPressed: onPressed,
+          elevation: 0,
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(50)),
           backgroundColor: Colors.white,

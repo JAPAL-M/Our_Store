@@ -16,3 +16,7 @@ class HomDataFailure extends HomDataState {
   final String errmessage;
   const HomDataFailure(this.errmessage);
 }
+
+
+class HomDataChangeIndex extends HomDataState {}
+

@@ -3,4 +3,5 @@ abstract class EndPoints{
   static const Register = 'register';
   static const Home = 'home';
   static const Categories = 'categories';
+  static const Cart = 'carts';
 }
