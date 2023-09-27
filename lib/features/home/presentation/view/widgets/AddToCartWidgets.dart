@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:our_store/features/cart/presentation/viewmodel/cart_cubit.dart';
-import 'package:our_store/features/details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
+import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_state.dart';
-
 import '../../../../../constant.dart';
 import '../../../../../core/utils/Styles.dart';
-import '../../../../details/presentation/view/widgets/CustomFloatingButton.dart';
+import '../../../../cart/presentation/viewmodel/UpdateCart_Cubit/update_cart_cubit.dart';
 import '../../../../details/presentation/view/widgets/CustomMaterialButton.dart';
 import '../../../data/models/HomeModel.dart';
 
@@ -52,8 +50,7 @@ class AddToCartWidgets extends StatelessWidget {
                           .changeInCart(products.id!.toInt(), context);
                       await AddAndGetCartCubit.get(context).addItemToCart(
                           id: products.id!.toInt(),
-                          context: context,
-                          products: products);
+                          context: context,);
                     },
                   );
                 },

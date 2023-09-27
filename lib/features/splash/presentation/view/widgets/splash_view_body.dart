@@ -18,7 +18,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     Future.delayed(
         const Duration(seconds: 1),
-        () => Get.to(
+        () => Get.offAll(
             CacheHelper.getData(key: 'token') == null
                 ? const LoginView()
                 : const HomeView(),

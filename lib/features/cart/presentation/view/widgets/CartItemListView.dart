@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_store/core/widgets/HorizntalLineSepreated.dart';
-
-import '../../../../../core/local/cache_helper.dart';
-import '../../../../details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
 import '../../../data/models/CartModel.dart';
+import '../../viewmodel/UpdateCart_Cubit/update_cart_cubit.dart';
 import 'CartListInfo.dart';
 
 class CartItemListView extends StatelessWidget {

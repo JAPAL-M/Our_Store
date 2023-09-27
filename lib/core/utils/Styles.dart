@@ -19,6 +19,6 @@ abstract class Styles {
  // static const textstyle24w400 = TextStyle(fontSize: 24, fontWeight: FontWeight.w400);
   static var textstyle19 = TextStyle(fontSize: 19.sp, fontWeight: FontWeight.w500);
   static var textstyle50 = TextStyle(fontSize: 40.sp,color: Colors.white);
-
+  static var textstyle17 = TextStyle(fontSize: 17.sp);
 
 }

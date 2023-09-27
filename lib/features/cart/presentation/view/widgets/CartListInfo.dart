@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/details/presentation/view/details_view.dart';
-import 'package:our_store/features/details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
+import '../../viewmodel/UpdateCart_Cubit/update_cart_cubit.dart';
 import 'AddOrRemoveItemCart.dart';
 import 'CartInfoProduct.dart';
 class CartListInfo extends StatelessWidget {

@@ -3,6 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../../constant.dart';
 import '../../../../home/data/models/HomeModel.dart';
+import '../../../../home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 
 class CustomSmoothIndicator extends StatelessWidget {
   const CustomSmoothIndicator({
@@ -19,6 +20,6 @@ class CustomSmoothIndicator extends StatelessWidget {
     return Center(
         child: SmoothPageIndicator(
             effect: WormEffect(activeDotColor: kSecondaryColor,dotWidth: 10,dotHeight: 10),
-            controller: controller, count: products.images!.length));
+            controller: controller, count: HomDataCubit.get(context).imagesProduct[products.id]!.length));
   }
 }

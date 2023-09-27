@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:our_store/constant.dart';
 import 'package:our_store/core/utils/AssetsData.dart';
 import 'package:our_store/features/home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
+import 'package:our_store/features/search/presentation/view/search_view.dart';
 
 import '../viewmodel/Home_Cubit/home_state.dart';
 
@@ -19,8 +21,10 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.local_mall_outlined, size: 25),
+            onPressed: () {
+              Get.to(const SearchView());
+            },
+            icon: const Icon(Icons.search, size: 25),
           )
         ],
         backgroundColor: kPrimaryColor,

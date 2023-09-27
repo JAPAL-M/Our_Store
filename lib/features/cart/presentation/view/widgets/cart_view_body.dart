@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/presentation/viewmodel/cart_cubit.dart';
+import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
 import 'CartItemListView.dart';
 import 'CheckOutItem.dart';
 

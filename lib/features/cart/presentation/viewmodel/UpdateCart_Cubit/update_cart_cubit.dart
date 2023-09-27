@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
-import 'package:our_store/features/cart/presentation/viewmodel/cart_cubit.dart';
+import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
-import '../../../../cart/data/models/CartModel.dart';
+import '../../../data/models/CartModel.dart';
 
 part 'update_cart_state.dart';
 
@@ -14,6 +14,7 @@ class UpdateCartCubit extends Cubit<UpdateCartState> {
   static UpdateCartCubit get(context) => BlocProvider.of(context);
  final CartRepo _cartRepo;
   Future<void> updateQuantity({required int? quantity,required int? id,context})async{
+    emit(CartUpdateLoading());
     var data = await _cartRepo.updateQuantity(quantity: quantity,id: id);
     data.fold((faill){
       emit(CartUpdateFailure(faill.errMessage));

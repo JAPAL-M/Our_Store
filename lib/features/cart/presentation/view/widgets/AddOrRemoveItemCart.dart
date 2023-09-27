@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/Styles.dart';
-import '../../../../details/presentation/view/widgets/CustomFloatingButton.dart';
-import '../../../../details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
+import 'CustomFloatingButton.dart';
 import '../../../data/models/CartModel.dart';
+import '../../viewmodel/UpdateCart_Cubit/update_cart_cubit.dart';
 
 class AddOrRemoveItemCart extends StatelessWidget {
   const AddOrRemoveItemCart({super.key, required this.cartItems, required this.cartModel});
@@ -22,7 +22,7 @@ class AddOrRemoveItemCart extends StatelessWidget {
         SizedBox(width: MediaQuery.of(context).size.width / 40,),
         CustomFloatingButtons(onPressed: (){
           UpdateCartCubit.get(context).add(context,cartItems,cartModel);
-        }, icon: Icons.add),
+        }, icon: Icons.add,),
       ],
     );
   }

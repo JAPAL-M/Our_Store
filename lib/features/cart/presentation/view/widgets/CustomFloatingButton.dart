@@ -12,6 +12,7 @@ class CustomFloatingButtons extends StatelessWidget {
         width: MediaQuery.of(context).size.width / 21,
         height: MediaQuery.of(context).size.width / 21,
         child: FloatingActionButton(
+          heroTag: UniqueKey(),
           onPressed: onPressed,
           elevation: 0,
           shape: OutlineInputBorder(

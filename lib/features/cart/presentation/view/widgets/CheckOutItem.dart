@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:our_store/features/details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
-
+import 'package:get/get.dart';
+import 'package:our_store/features/checkout/presentation/view/checkout_view.dart';
 import '../../../../../constant.dart';
 import '../../../../../core/utils/Styles.dart';
 import '../../../../../core/widgets/HorizntalLineSepreated.dart';
 import '../../../../details/presentation/view/widgets/CustomMaterialButton.dart';
 import '../../../data/models/CartModel.dart';
+import '../../viewmodel/UpdateCart_Cubit/update_cart_cubit.dart';
 
 class CheckOutItem extends StatelessWidget {
   const CheckOutItem({
@@ -116,7 +117,9 @@ class CheckOutItem extends StatelessWidget {
               styleText:
                   Styles.textstyle20.copyWith(fontWeight: FontWeight.w400),
               radius: 8,
-              onPressed: () {})
+              onPressed: () {
+                Get.to(const CheckOutView());
+              })
         ],
       ),
     );

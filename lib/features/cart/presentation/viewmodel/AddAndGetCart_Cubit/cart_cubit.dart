@@ -3,8 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
-import '../../../details/presentation/viewmodel/AddToCart/update_cart_cubit.dart';
-import '../../../home/data/models/HomeModel.dart';
+import '../../../../home/data/models/HomeModel.dart';
+import '../UpdateCart_Cubit/update_cart_cubit.dart';
 
 part 'cart_state.dart';
 
@@ -14,7 +14,7 @@ class AddAndGetCartCubit extends Cubit<CartState> {
   final CartRepo _cartRepo;
 
 
-  Future<void> addItemToCart({required int? id,context,Products? products})async{
+  Future<void> addItemToCart({required int? id,context})async{
     var data = await _cartRepo.addItemToCart(id: id);
     data.fold((faill){
       emit(CartAddFailure(faill.errMessage));
