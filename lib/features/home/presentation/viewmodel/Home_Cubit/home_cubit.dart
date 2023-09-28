@@ -11,6 +11,8 @@ import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_s
 import 'package:our_store/features/profile/presentation/view/profile_view.dart';
 import 'package:our_store/features/profile/presentation/viewmodel/profile_cubit.dart';
 
+import '../../../../Address/presentation/viewmodel/Address_Data_Cubit/address_data_cubit.dart';
+
 class HomeCubit extends Cubit<HomeState>{
   HomeCubit() : super(HomeInitial());
   static HomeCubit get(context) => BlocProvider.of(context);
@@ -23,6 +25,7 @@ class HomeCubit extends Cubit<HomeState>{
     }else if(currentIndex == 2){
       FavoriteCubit.get(context).getItemFromFavorite();
     }else if (currentIndex == 3) {
+      AddressDataCubit.get(context).getAddress();
       ProfileCubit.get(context).getProfile();
     }
     emit(HomeBottomNavBarChange());

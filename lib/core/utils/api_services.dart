@@ -30,13 +30,13 @@ class ApiServices{
     return result.data;
   }
 
-  Future<Map<String,dynamic>> delete({required String endpoint,Map<String,dynamic>? query,String lang = 'en',required Map<String,dynamic>? data,}) async{
+  Future<Map<String,dynamic>> delete({required String endpoint,String lang = 'en'}) async{
     _dio.options.headers = {
       'lang':lang,
       'Content-Type':'application/json',
       'Authorization' : token ?? ''
     };
-    var result = await _dio.delete('$_baseurl$endpoint',queryParameters: query,data: data);
+    var result = await _dio.delete('$_baseurl$endpoint');
 
     return result.data;
   }
@@ -48,7 +48,6 @@ class ApiServices{
       'Authorization' : token ?? ''
     };
     var result = await _dio.get('$_baseurl$endpoint');
-
     return result.data;
   }
 }

@@ -8,4 +8,5 @@ abstract class EndPoints{
   static const Search = 'products/search';
   static const Profile = 'profile';
   static const UpdateProfile = 'update-profile';
+  static const Address = 'addresses';
 }
