@@ -9,4 +9,5 @@ abstract class EndPoints{
   static const Profile = 'profile';
   static const UpdateProfile = 'update-profile';
   static const Address = 'addresses';
+  static const Order = 'orders';
 }

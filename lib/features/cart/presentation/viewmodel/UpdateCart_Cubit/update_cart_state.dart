@@ -21,3 +21,12 @@ class CartUpdateFailure extends UpdateCartState {
   final String errmessage;
   CartUpdateFailure(this.errmessage);
 }
+class CartGetTotalPriceLoading extends UpdateCartState {}
+class CartGetTotalPriceSuccess extends UpdateCartState {
+  final CartTotalPriceModel cartTotalPriceModel;
+  CartGetTotalPriceSuccess(this.cartTotalPriceModel);
+}
+class CartGetTotalPriceFailure extends UpdateCartState {
+  final String errmessage;
+  CartGetTotalPriceFailure(this.errmessage);
+}

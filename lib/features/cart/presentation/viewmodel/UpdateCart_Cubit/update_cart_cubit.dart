@@ -6,6 +6,7 @@ import 'package:our_store/features/cart/data/repo/cart_repo.dart';
 import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 import '../../../data/models/CartModel.dart';
+import '../../../data/models/CartTotalPriceModel.dart';
 
 part 'update_cart_state.dart';
 
@@ -59,7 +60,6 @@ class UpdateCartCubit extends Cubit<UpdateCartState> {
     }
     emit(GetTotalPriceSuccess());
   }
-
 
 
 }

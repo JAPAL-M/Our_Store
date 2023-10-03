@@ -2,13 +2,15 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
+import 'package:our_store/features/cart/data/models/CartTotalPriceModel.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
+import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
 import '../../../../home/data/models/HomeModel.dart';
 import '../UpdateCart_Cubit/update_cart_cubit.dart';
 
 part 'cart_state.dart';
 
-class AddAndGetCartCubit extends Cubit<CartState> {
+class AddAndGetCartCubit extends Cubit<AddAndGetCartState> {
   AddAndGetCartCubit(this._cartRepo) : super(CartInitial());
   static AddAndGetCartCubit get(context) => BlocProvider.of(context);
   final CartRepo _cartRepo;
@@ -28,6 +30,7 @@ class AddAndGetCartCubit extends Cubit<CartState> {
     data.fold((faill){
       emit(CartGetFailure(faill.errMessage));
     }, (products){
+      changeCartItemLength(products.data!.cartItems!.length, context);
       for (var element in products.data!.cartItems!) {
         UpdateCartCubit.get(context).price.addAll({
           element.id!.toInt() : element.product!.price!.toInt()
@@ -41,4 +44,8 @@ class AddAndGetCartCubit extends Cubit<CartState> {
     });
   }
 
+  void changeCartItemLength(int num,context){
+    HomeCubit.get(context).addCart = num;
+    emit(CartRemoveItemSuccess());
+  }
 }

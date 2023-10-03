@@ -31,7 +31,7 @@ class RegisterDetailsView extends StatelessWidget {
             showToast(
                 text: state.registerModel.message.toString(),
                 color: kSecondaryColor);
-            Get.to(const HomeView());
+            Get.offAll(const HomeView());
           });
         } else if (state is RegisterFailure) {
           EasyLoading.dismiss();

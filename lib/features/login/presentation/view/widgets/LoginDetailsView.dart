@@ -32,7 +32,7 @@ class LoginDetailsView extends StatelessWidget {
             showToast(
                 text: state.loginModel.message.toString(),
                 color: kSecondaryColor);
-            Get.to(const HomeView());
+            Get.offAll(const HomeView());
           });
         } else if (state is LoginFailure) {
           EasyLoading.dismiss();

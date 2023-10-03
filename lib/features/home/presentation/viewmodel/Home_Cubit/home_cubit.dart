@@ -8,6 +8,7 @@ import 'package:our_store/features/favorite/presentation/viewmodel/favorite_cubi
 import 'package:our_store/features/home/presentation/view/widgets/home_view_body.dart';
 import 'package:our_store/features/home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_state.dart';
+import 'package:our_store/features/orders/presentation/viewmodel/order_cubit.dart';
 import 'package:our_store/features/profile/presentation/view/profile_view.dart';
 import 'package:our_store/features/profile/presentation/viewmodel/profile_cubit.dart';
 
@@ -20,12 +21,12 @@ class HomeCubit extends Cubit<HomeState>{
   int currentIndex = 0;
   void changeCurrentIndex(int index,context){
     currentIndex = index;
-    if(currentIndex == 1){
+    if(currentIndex == 0 || currentIndex == 1){
       AddAndGetCartCubit.get(context).getItemFromCart(context);
     }else if(currentIndex == 2){
       FavoriteCubit.get(context).getItemFromFavorite();
     }else if (currentIndex == 3) {
-      AddressDataCubit.get(context).getAddress();
+      OrderCubit.get(context).getOrder();
       ProfileCubit.get(context).getProfile();
     }
     emit(HomeBottomNavBarChange());
@@ -39,7 +40,7 @@ class HomeCubit extends Cubit<HomeState>{
   ];
 
 
-
+int addCart = 0;
   void changeInCart(int id,context){
     HomDataCubit.get(context).inCart[id] = !HomDataCubit.get(context).inCart[id]!;
     emit(ChangeInCartStates());

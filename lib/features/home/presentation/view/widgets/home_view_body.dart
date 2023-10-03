@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import 'package:our_store/core/animation/LoadingAnimation.dart';
+import 'package:our_store/core/utils/AssetsData.dart';
 import 'package:our_store/core/utils/Styles.dart';
 import 'package:our_store/features/home/presentation/view/widgets/SeeAllProductListView.dart';
 import 'package:our_store/features/home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
@@ -10,20 +13,14 @@ import 'CustomChipListView.dart';
 import 'FeatureProductGridView.dart';
 import 'HotSalesListView.dart';
 
-class HomeViewBody extends StatefulWidget {
+class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
-  @override
-  State<HomeViewBody> createState() => _HomeViewBodyState();
-}
-
-class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomDataCubit, HomDataState>(
   builder: (context, state) {
     if(state is HomDataSuccess){
-      EasyLoading.dismiss();
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: CustomScrollView(
@@ -77,11 +74,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         ),
       );
     }else if(state is HomDataFailure){
-      EasyLoading.dismiss();
       return Center(child: Text(state.errmessage));
     }else{
-      EasyLoading.show(status: 'loading...');
-      return const Text('');
+     return const LoadingAnimation();
+     // return const Text('');
     }
   },
 );

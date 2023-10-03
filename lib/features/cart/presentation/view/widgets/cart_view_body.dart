@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:lottie/lottie.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
+import '../../../../../core/animation/EmptyProductAnimation.dart';
+import '../../../../../core/animation/LoadingAnimation.dart';
+import '../../../../../core/utils/AssetsData.dart';
 import 'CartItemListView.dart';
 import 'CheckOutItem.dart';
 
@@ -11,30 +15,35 @@ class CartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AddAndGetCartCubit, CartState>(
+    return BlocBuilder<AddAndGetCartCubit, AddAndGetCartState>(
       builder: (context, state) {
         if (state is CartGetSuccess) {
-          EasyLoading.dismiss();
-          return SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                CartItemListView(cartModel: state.cartModel,),
-                CheckOutItem(cartModel: state.cartModel,)
-              ],
-            ),
-          );
+          if(state.cartModel.data!.cartItems!.isEmpty){
+            return const EmptyProductAnimation();
+          }else{
+            return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  CartItemListView(cartModel: state.cartModel,),
+                  CheckOutItem(cartModel: state.cartModel,)
+                ],
+              ),
+            );
+          }
         } else if (state is CartGetFailure) {
-          EasyLoading.dismiss();
           return Center(child: Text(state.errmessage));
         } else {
-          EasyLoading.show(status: 'loading cart...');
-          return const Text('');
+          return const LoadingAnimation();
         }
       },
     );
   }
 }
+
+
+
+
 
 
 

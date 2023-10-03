@@ -10,6 +10,7 @@ import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
+import 'package:our_store/features/cart/data/models/CartTotalPriceModel.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 
