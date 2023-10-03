@@ -1,4 +1,3 @@
 abstract class ApiKey{
-  static const publishableKey = 'pk_test_51NtxcfAksPUj3ACyJoaPCZZfCErf4wMD79q9S3PcvA3jJ27mBurBkYeUOplJ8OV26zXjQ2jl7FY1rVaVSWtIL3h100oRKGaGGE';
-  static const secretKey = 'sk_test_51NtxcfAksPUj3ACyP4C51qN4gVqLY8av5d11T4AaOqZ4UVXNFwOEFQJQ96kaFc3Ox9kgcZ2TWNqDx5qRBv0JprfP00y8dT5plw';
+
 }
