@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:lottie/lottie.dart';
 import 'package:our_store/core/animation/EmptyProductAnimation.dart';
 import 'package:our_store/core/animation/LoadingAnimation.dart';
 import 'package:our_store/features/favorite/presentation/viewmodel/favorite_cubit.dart';
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 
-import '../../../../core/utils/AssetsData.dart';
 import '../../../home/presentation/view/widgets/HotSalesInfoItem.dart';
 
 class FavoriteViewBody extends StatelessWidget {

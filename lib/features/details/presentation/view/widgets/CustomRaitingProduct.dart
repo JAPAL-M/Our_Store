@@ -27,7 +27,7 @@ class CustomRaitingProduct extends StatelessWidget {
                   color: Colors.amberAccent),
               empty: const Icon(Icons.star_border,
                   color: Colors.amberAccent)),
-          onRatingUpdate: (value) => null,
+          onRatingUpdate: (value) {},
         ),
         const SizedBox(
           width: 10,

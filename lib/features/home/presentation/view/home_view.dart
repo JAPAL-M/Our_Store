@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:our_store/constant.dart';
 import 'package:our_store/core/utils/AssetsData.dart';
 import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
-import 'package:our_store/features/home/presentation/viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
 import 'package:our_store/features/search/presentation/view/search_view.dart';
 

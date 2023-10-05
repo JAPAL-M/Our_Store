@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:our_store/features/register/presentation/viewmodel/register_cubit.dart';
 import '../../../../../constant.dart';
 import '../../../../../core/function/CustomToast.dart';

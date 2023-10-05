@@ -1,10 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:meta/meta.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
-import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 import '../../../data/models/CartModel.dart';
 import '../../../data/models/CartTotalPriceModel.dart';
 
@@ -20,10 +16,10 @@ class UpdateCartCubit extends Cubit<UpdateCartState> {
     data.fold((faill){
       emit(CartUpdateFailure(faill.errMessage));
     }, (products){
-      products.forEach((element) {
+      for (var element in products) {
         price.update(element.id!.toInt(), (value) => element.product!.price!.toInt());
         quantityProduct.update(element.id!.toInt(), (value) => element.quantity!.toInt());
-      });
+      }
       emit(CartUpdateSuccess(products));
     });
   }

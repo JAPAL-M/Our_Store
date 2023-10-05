@@ -16,7 +16,7 @@ class OrderRepoImpl implements OrderRepo {
   Future<void> postOrder(
       {required int? addressId, required int? paymentMethod}) async {
     try {
-      var data = await _apiServices.post(endpoint: EndPoints.Order, data: {
+      await _apiServices.post(endpoint: EndPoints.Order, data: {
         "address_id": addressId,
         "payment_method": paymentMethod,
         "use_points": 'false'
@@ -49,8 +49,8 @@ class OrderRepoImpl implements OrderRepo {
   Future<Either<Failure, OrderDetailsModel>> getOrderDetails(
       {required int? orderId}) async {
     try {
-      var data = await _apiServices.get(
-          endpoint: '${EndPoints.Order}/$orderId');
+      var data =
+          await _apiServices.get(endpoint: '${EndPoints.Order}/$orderId');
       OrderDetailsModel orderDetailsModel;
       try {
         orderDetailsModel = OrderDetailsModel.fromJson(data);

@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_store/constant.dart';
 import 'package:our_store/core/utils/Styles.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
+import 'package:our_store/features/checkout/data/repo/payment_repo.dart';
 import 'package:our_store/features/checkout/presentation/viewmodel/checkout_cubit.dart';
 import 'package:our_store/features/details/presentation/view/widgets/CustomMaterialButton.dart';
-import 'package:our_store/features/payment/data/repo/payment_repo.dart';
 import '../../../../orders/presentation/viewmodel/order_cubit.dart';
 import '../function/get_steps_function.dart';
 
@@ -21,7 +21,7 @@ class CheckOutViewBody extends StatelessWidget {
     CheckoutCubit.get(context).currentStep = 0;
     return BlocBuilder<CheckoutCubit, CheckoutState>(
       builder: (context, state) {
-        final isLastStep = getSteps(context,totalPrice,cartModel).length - 1;
+        final isLastStep = getSteps(context, totalPrice, cartModel).length - 1;
         return Column(
           children: [
             Expanded(
@@ -84,7 +84,7 @@ class CheckOutViewBody extends StatelessWidget {
                       ),
                     );
                   },
-                  steps: getSteps(context,totalPrice,cartModel)),
+                  steps: getSteps(context, totalPrice, cartModel)),
             )
           ],
         );

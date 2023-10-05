@@ -7,4 +7,5 @@ var kSecondaryColor = HexColor('#843667');
 const kWhiteColor = Colors.white;
 String token = CacheHelper.getData(key: 'token') ?? '';
 
+// ignore: constant_identifier_names
 const String Cart = 'carts/';

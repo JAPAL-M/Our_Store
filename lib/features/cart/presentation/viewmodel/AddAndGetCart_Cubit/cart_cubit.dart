@@ -1,11 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartTotalPriceModel.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
-import '../../../../home/data/models/HomeModel.dart';
 import '../UpdateCart_Cubit/update_cart_cubit.dart';
 
 part 'cart_state.dart';

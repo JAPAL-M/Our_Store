@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:our_store/core/animation/LoadingAnimation.dart';
 import 'package:our_store/core/local/cache_helper.dart';
 import 'package:our_store/features/login/presentation/view/login_view.dart';
@@ -13,7 +11,6 @@ import 'package:our_store/features/profile/presentation/view/widgets/edit_profil
 import 'package:our_store/features/Address/presentation/view/shipping_address_view.dart';
 import 'package:our_store/features/profile/presentation/viewmodel/profile_cubit.dart';
 
-import '../../../../core/utils/AssetsData.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

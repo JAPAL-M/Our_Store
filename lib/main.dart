@@ -12,6 +12,7 @@ import 'package:our_store/features/Address/data/repo/address_repo_impl.dart';
 import 'package:our_store/features/Address/presentation/viewmodel/Address_Data_Cubit/address_data_cubit.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo_impl.dart';
 import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
+import 'package:our_store/features/checkout/data/models/ApiKey.dart';
 import 'package:our_store/features/checkout/presentation/viewmodel/checkout_cubit.dart';
 import 'package:our_store/features/favorite/data/repo/fav_repo_impl.dart';
 import 'package:our_store/features/favorite/presentation/viewmodel/favorite_cubit.dart';
@@ -22,7 +23,6 @@ import 'package:our_store/features/login/data/repo/login_repo_impl.dart';
 import 'package:our_store/features/login/presentation/viewmodel/login_cubit.dart';
 import 'package:our_store/features/orders/data/repo/order_repo_impl.dart';
 import 'package:our_store/features/orders/presentation/viewmodel/order_cubit.dart';
-import 'package:our_store/features/payment/data/models/ApiKey.dart';
 import 'package:our_store/features/profile/data/repo/profile_repo_impl.dart';
 import 'package:our_store/features/profile/presentation/viewmodel/profile_cubit.dart';
 import 'package:our_store/features/register/data/repo/register_repo_impl.dart';
@@ -53,20 +53,43 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (create) => LoginCubit(LoginRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => RegisterCubit(RegisterRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => HomDataCubit(HomeRepoImpl(ApiServices(Dio())))..fetchHomeData(context)),
+          BlocProvider(
+              create: (create) =>
+                  LoginCubit(LoginRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  RegisterCubit(RegisterRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) => HomDataCubit(HomeRepoImpl(ApiServices(Dio())))
+                ..fetchHomeData(context)),
           BlocProvider(create: (create) => HomeCubit()),
-          BlocProvider(create: (create) => AddAndGetCartCubit(CartRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => UpdateCartCubit(CartRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => FavoriteCubit(FavoriteRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => SearchCubit(SearchRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => ProfileCubit(ProfileRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  AddAndGetCartCubit(CartRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  UpdateCartCubit(CartRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  FavoriteCubit(FavoriteRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  SearchCubit(SearchRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  ProfileCubit(ProfileRepoImpl(ApiServices(Dio())))),
           BlocProvider(create: (create) => AddressCubit()),
-          BlocProvider(create: (create) => AddressDataCubit(AddressRepoImpl(ApiServices(Dio())))..getAddress()),
+          BlocProvider(
+              create: (create) =>
+                  AddressDataCubit(AddressRepoImpl(ApiServices(Dio())))
+                    ..getAddress()),
           BlocProvider(create: (create) => CheckoutCubit()),
-          BlocProvider(create: (create) => OrderCubit(OrderRepoImpl(ApiServices(Dio())))),
-          BlocProvider(create: (create) => OrderDetailsCubit(OrderRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  OrderCubit(OrderRepoImpl(ApiServices(Dio())))),
+          BlocProvider(
+              create: (create) =>
+                  OrderDetailsCubit(OrderRepoImpl(ApiServices(Dio())))),
         ],
         child: GetMaterialApp(
           builder: EasyLoading.init(),

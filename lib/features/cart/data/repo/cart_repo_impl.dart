@@ -5,14 +5,7 @@ import 'package:our_store/core/errors/failures.dart';
 import 'package:our_store/core/utils/api_services.dart';
 import 'package:our_store/core/utils/endpoints_api.dart';
 import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartModel.dart';
-import 'package:our_store/features/cart/data/models/CartTotalPriceModel.dart';
 import 'package:our_store/features/cart/data/repo/cart_repo.dart';
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 
 class CartRepoImpl implements CartRepo{
   final ApiServices _apiServices;

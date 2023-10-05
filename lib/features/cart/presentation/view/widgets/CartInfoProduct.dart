@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 
 import '../../../../../core/utils/Styles.dart';
-import '../../../data/models/CartModel.dart';
 
 class CartInfoProduct extends StatelessWidget {
   const CartInfoProduct({super.key, required this.product});

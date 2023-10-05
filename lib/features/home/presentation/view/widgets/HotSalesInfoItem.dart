@@ -2,16 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:our_store/constant.dart';
-import 'package:our_store/features/cart/presentation/view/widgets/AddOrRemoveItemCart.dart';
 import 'package:our_store/features/cart/presentation/viewmodel/AddAndGetCart_Cubit/cart_cubit.dart';
 import 'package:our_store/features/details/presentation/view/details_view.dart';
-import 'package:our_store/features/favorite/presentation/viewmodel/favorite_cubit.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_cubit.dart';
 import 'package:our_store/features/home/presentation/viewmodel/Home_Cubit/home_state.dart';
 
-import '../../../../../core/utils/AssetsData.dart';
 import '../../../../../core/utils/Styles.dart';
 import '../../viewmodel/HomeData_Cubit/hom_data_cubit.dart';
 import 'CustomFloatingButton.dart';

@@ -1,10 +1,7 @@
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 
-import 'package:our_store/features/home/data/models/HomeModel.dart';
 
 class FavoriteModel {
   FavoriteModel({

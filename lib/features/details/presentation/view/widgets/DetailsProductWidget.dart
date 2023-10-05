@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:our_store/constant.dart';
 import 'package:our_store/features/home/data/models/HomeModel.dart';
 import '../../../../../core/utils/Styles.dart';
-import '../../../../cart/presentation/view/widgets/CustomFloatingButton.dart';
-import 'CustomMaterialButton.dart';
 import 'CustomRaitingProduct.dart';
 
 class DetailsProductWidget extends StatelessWidget {
